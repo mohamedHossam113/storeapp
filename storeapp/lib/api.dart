@@ -52,7 +52,8 @@ class Api {
       }
       return data;
     } else {
-      throw Exception('problem with status code ${response.statusCode}');
+      throw Exception(
+          'problem with status code ${response.statusCode}, url: $url, body: $body, response: ${response.body}');
     }
   }
 

@@ -102,6 +102,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
       desc: desc == null ? product.description : desc!,
       image: image == null ? product.image : image!,
       price: price == null ? product.price.toString() : price!,
+      id: product.id,
     );
   }
 }

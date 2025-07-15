@@ -6,10 +6,11 @@ class UpdateProduct {
       {String? title,
       String? price,
       String? desc,
+      required int id,
       String? image,
       String? category}) async {
     Map<String, dynamic> data =
-        await Api().put(url: 'https://fakestoreapi.com/products/:id', body: {
+        await Api().put(url: 'https://fakestoreapi.com/products/$id', body: {
       if (title != null) 'title': title,
       if (price != null) 'price': price,
       if (desc != null) 'description': desc,
