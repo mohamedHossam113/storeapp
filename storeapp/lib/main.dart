@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:storeapp/screens/home_page.dart';
+import 'package:storeapp/screens/update_product_page.dart';
 
 void main() {
   runApp(const StoreApp());
@@ -9,6 +10,7 @@ void main() {
 class StoreApp extends StatelessWidget {
   const StoreApp({super.key});
   static String id = 'HomeScreen';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +18,7 @@ class StoreApp extends StatelessWidget {
       color: Colors.white,
       routes: {
         '/': (context) => const HomePage(),
+        UpdateProductPage.id!: (context) => UpdateProductPage(),
       },
     );
   }

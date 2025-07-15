@@ -4,6 +4,7 @@ class ProductModel {
   final dynamic price;
   final String description;
   final String image;
+
   final RatingModel rating;
   ProductModel({
     required this.id,
