@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
@@ -23,11 +23,10 @@ class Api {
     Map<String, String> headers = {
       'Content-Type': 'application/x-www-form-urlencoded'
     };
-    print('url: $url, body: $body');
     http.Response response =
         await http.post(Uri.parse(url), body: body, headers: headers);
-    Map<String, dynamic> data = jsonDecode(response.body);
     if (response.statusCode == 200) {
+      Map<String, dynamic> data = jsonDecode(response.body);
       return data;
     } else {
       throw Exception('problem with status code ${response.statusCode}');
@@ -41,10 +40,16 @@ class Api {
     Map<String, String> headers = {
       'Content-Type': 'application/x-www-form-urlencoded'
     };
+    if (kDebugMode) {
+      print('url: $url, body: $body');
+    }
     http.Response response =
         await http.put(Uri.parse(url), body: body, headers: headers);
-    Map<String, dynamic> data = jsonDecode(response.body);
     if (response.statusCode == 200) {
+      Map<String, dynamic> data = jsonDecode(response.body);
+      if (kDebugMode) {
+        print('data: $data');
+      }
       return data;
     } else {
       throw Exception('problem with status code ${response.statusCode}');
