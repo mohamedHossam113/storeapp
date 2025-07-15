@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 
@@ -22,6 +23,7 @@ class Api {
     Map<String, String> headers = {
       'Content-Type': 'application/x-www-form-urlencoded'
     };
+    print('url: $url, body: $body');
     http.Response response =
         await http.post(Uri.parse(url), body: body, headers: headers);
     Map<String, dynamic> data = jsonDecode(response.body);

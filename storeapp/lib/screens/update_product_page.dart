@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:storeapp/models/product_model.dart';
@@ -9,7 +8,7 @@ import 'package:storeapp/services/custom_textfield.dart';
 import 'package:storeapp/services/update_product.dart';
 
 class UpdateProductPage extends StatefulWidget {
-  UpdateProductPage({super.key});
+  const UpdateProductPage({super.key});
   static String? id = 'Update Product';
 
   @override
@@ -19,7 +18,7 @@ class UpdateProductPage extends StatefulWidget {
 class _UpdateProductPageState extends State<UpdateProductPage> {
   String? productName, desc, image;
   bool isLoading = false;
-  dynamic price;
+  String? price;
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +101,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
       title: productName == null ? product.title : productName!,
       desc: desc == null ? product.description : desc!,
       image: image == null ? product.image : image!,
-      price: price == null ? product.price : price!,
+      price: price == null ? product.price.toString() : price!,
     );
   }
 }

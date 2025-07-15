@@ -4,7 +4,7 @@ import 'package:storeapp/models/product_model.dart';
 class UpdateProduct {
   Future<ProductModel> updateProduct(
       {String? title,
-      dynamic price,
+      String? price,
       String? desc,
       String? image,
       String? category}) async {

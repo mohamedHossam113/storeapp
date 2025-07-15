@@ -18,7 +18,7 @@ class StoreApp extends StatelessWidget {
       color: Colors.white,
       routes: {
         '/': (context) => const HomePage(),
-        UpdateProductPage.id!: (context) => UpdateProductPage(),
+        UpdateProductPage.id!: (context) => const UpdateProductPage(),
       },
     );
   }
